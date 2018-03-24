@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+import sys
+import helpers
+import os
+import nltk
+
+from analyzer import Analyzer
+from termcolor import colored
+
+# ensure proper usage
+if len(sys.argv) != 2:
+    sys.exit("Usage: ./smile word")
+    
+tweets=helpers.get_user_timeline(sys.argv[1],50)
+if tweets==None:
+    sys.exit("Tweets retrieval failed.")
+
+# absolute paths to lists
+positives = os.path.join(sys.path[0], "positive-words.txt")
+negatives = os.path.join(sys.path[0], "negative-words.txt")
+    
+ana=Analyzer(positives,negatives)
+
+for tweet in tweets:
+    score=ana.analyze(tweet)
+    if score > 0.0:
+        print(colored(str(score)+" "+tweet, "green"))
+    elif score < 0.0:
+        print(colored(str(score)+" "+tweet, "red"))
+    else:
+        print(colored(str(score)+" "+tweet, "yellow"))
