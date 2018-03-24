@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+    <h2>User Settings</h2>
+    <hr>
+    <form action="{{ url_for('settings') }}" method="post">
+        <div class="form-group">
+                <p>Current Username: {{ username }}</p>
+                <p>New Username:   <input autocomplete="off" autofocus class="form-control" name="newUsername" placeholder= "Username" type="text"/> </p>
+                <button class="btn btn-default" type="submit" name="change" value="username">Change Username</button></p>
+        </div>
+    </form>
+    <hr>
+    <form action="{{ url_for('settings') }}" method="post">
+        <div class="form-group">
+                <p>Current password: <input autocomplete="off" autofocus class="form-control" name="oldPassword" placeholder= "Password" type="password"/></p>
+                <p>New password:  <input autocomplete="off" autofocus class="form-control" name="newPassword" placeholder= "Password" type="password"/> </p>
+                <p>Confirm new password: <input autocomplete="off" autofocus class="form-control" name="passConfirm" placeholder= "Password" type="password"/> </p>
+                <button class="btn btn-default" type="submit" name="change" value="password">Change Password</button></p>
+        </div>
+    </form>
+{% endblock %}
