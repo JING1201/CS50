@@ -1,0 +1,12 @@
+1.  stdint.h is a header file in the C language library that allows the user to use a variety of types of ints, such as exact-width integer types and minimum-width integer types. 
+2.  Using these allows the programmer to be able to specify the size of memory that the int takes up. This is also useful in color representation in BMP files, which can support all 1-, 4-, 8-, 16-, 24-, and 32-bit colors.
+3.  BYTE=1 byte; DWORD=4 bytes; LONG=4 bytes; WORD=2 bytes
+4.  In ASCII, the first two bytes of any BMP file is the character "B" followed by the character "M".
+5.  bfSize is the size of the entire BMP file, while biSize is the size of the BITMAPINFOHEADER, a struct.
+6.  If the bitheight is negative, then the bitmap is a top-down DIB (device-independent bitmaps) and the origin is at the top left corner of the image.
+7.  biBitCount specifies the number of bits per pixel.
+8.  The file that the program wants to open might not exist or cannot be accessed, causing the pointer to be null.
+9.  According to the CS50 Reference, the third argument of fread represents blocks, which is the number of times that we want fread to read from the file for an element of a specific size (argument 2). In our code, we only need to read once to get the struct, so the third argument is always 1.
+10. (4-(3*3)%4)%4=(4-9%4)%4=(4-1)%4=3
+11. fseek allows us to change the location of the file pointer (the first argument).
+12. SEEK_CUR is an integer constant that specificies that the offset of the pointer (in the seek function) is relative to the pointer's current location.
