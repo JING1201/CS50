@@ -1,0 +1,19 @@
+questions.txt
+
+Computer Science 50
+Problem Set 3
+
+/*
+Besides 4 × 4 (which are Game of Fifteen’s dimensions), what other dimensions does the framework allow?
+
+With what sort of data structure is the game’s board represented?
+
+What function is called to greet the player at game’s start?
+
+What functions do you apparently need to implement?
+*/
+
+0. The framework of the program allows the board to have the dimension of 3x3 to 9x9 inclusive.
+1. The game board is represented by a 2D array with the same number of rows and columns.
+2. greet()
+3. init(), draw(), move(), won()
